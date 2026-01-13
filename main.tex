@@ -1,0 +1,208 @@
+% =========================
+% Minimal Book Template
+% =========================
+\documentclass[11pt,openany]{book}
+
+% ---------- Page / Font ----------
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+
+
+% ---------- Links / Color ----------
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- TOC style (optional) ----------
+\usepackage{tocloft}
+
+\usepackage{braket}
+
+% ---------- Boxes ----------
+\usepackage[most]{tcolorbox}
+\tcbset{
+  enhanced,
+  arc=10pt,                 % 圆角
+  boxrule=0pt,              % 无边框线（更简约）
+  left=10pt,right=10pt,
+  top=10pt,bottom=10pt,
+  before skip=10pt,
+  after skip=10pt,
+}
+
+% 三种颜色的圆润方框（你可以改颜色/标题）
+\newtcolorbox{InfoBox}[1][]{colback=blue!6, colframe=blue!40!black, title=Info, fonttitle=\bfseries, #1}
+\newtcolorbox{NoteBox}[1][]{colback=green!6,colframe=green!40!black,title=Note, fonttitle=\bfseries, #1}
+\newtcolorbox{WarnBox}[1][]{colback=orange!8,colframe=orange!55!black,title=Warning, fonttitle=\bfseries, #1}
+
+% ---------- Code Listing Box ----------
+\usepackage{listings}
+\lstdefinestyle{clean}{
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  numberstyle=\tiny,
+  numbers=left,
+  xleftmargin=2.2em,
+  frame=none,
+  keywordstyle=\bfseries,
+  commentstyle=\itshape,
+}
+
+% 代码专用方框：圆润 + 浅灰底 + 顶部标题
+\newtcolorbox{CodeBox}[2][]{ % #2 是标题
+  colback=black!3,
+  colframe=black!20,
+  arc=10pt,
+  boxrule=0.6pt,
+  title=\textbf{#2},
+  fonttitle=\bfseries,
+  listing only,
+  listing options={style=clean},
+  #1
+}
+
+% ---------- Title Info ----------
+\title{\textbf{Quantum Communication and Networking}\\\large A Minimal \LaTeX\ Book Template}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+% =========================
+% Cover Page
+% =========================
+\begin{titlepage}
+  \centering
+  \vspace*{2.2cm}
+  {\Huge\bfseries Quantum Communication and Networking\par}
+  \vspace{0.4cm}
+  {\Large A NoteBook \par}
+  \vspace{1.6cm}
+
+  {\Large\textbf{Zhehao Yi}\par}
+  \vspace{0.3cm}
+  {\large \today\par}
+
+  \vfill
+  {\large \textit{Please have fun with quantum world}\par}
+  \vspace*{1.5cm}
+\end{titlepage}
+
+% =========================
+% Front Matter
+% =========================
+\frontmatter
+\tableofcontents
+\clearpage
+
+% =========================
+% Main Matter
+% =========================
+\mainmatter
+
+\chapter{Quantum Information Science: An Introduction}
+
+The three main aspects of quantum science and technology are:
+\begin{itemize}
+    \item Quantum Computing and Simulation (Optimization, Machine Learning, Material design, Drug discovery, etc.)
+    \item Quantum Sensing (Magnetice field, Biomedical imaging, GPS-free navigation, etc.)
+    \item Quantum Communication (Secure data encryption, Remote Q computing, Distributed quantum sensing, etc.)
+\end{itemize}
+
+Here we take a brief look at Quantum Computing:
+\begin{InfoBox}{Quantum Computing}
+
+Using qubits to perform computations that are infeasible for classical computers.
+
+In traditional computers, bits are either 0 or 1. In quantum computers, qubits can be in superpositions of basis states, enabling potentially exponential speedups for certain problems. The basic states of a qubit can be represented as: $\ket{0}$ and $\ket{1}$.
+
+So we can represent a qubit state as: $\ket{\psi} = \alpha\ket{0} + \beta\ket{1}$, where $\alpha$ and $\beta$ are complex numbers satisfying $|\alpha|^2 + |\beta|^2 = 1$.
+
+In matrix form, we can write:
+\begin{equation}
+\ket{0} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \quad \ket{1} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\end{equation}
+
+And there are various way to making qubits, such as 
+
+\textit{SPIN QUBITS} (from spins of electrons or nuclei trapped in a solid substrate such as nitrogen vacancy cneters in diamond), 
+
+\textit{PHOTONIC QUBITS} (from polarization or path of single photons), 
+
+\textit{SUPERCONDUCTING QUBITS} (from Josephson junctions in superconducting circuits), 
+
+\textit{ION TRAP QUBITS} (from internal states of trapped ions).
+
+In quantum computing, we need error correction.
+\end{InfoBox}
+
+And now we look at Quantum Communication:
+\begin{InfoBox}{Quantum Communication}
+
+Using quantum states to transmit information securely over long distances.
+
+Plateforms for quantum communication include satellite to ground or satellite to satellite links (long distance but low rate), ground to ground fiber links (potentially high rate with quantum repeaters).
+
+Here we introduce some misconceptions:
+\begin{itemize}
+  \item \textbf{Misconception 1:} A qubit cannot have two values at the same time.
+  \item \textbf{Misconception 2:} Measuring one particle cannot affect the other.
+  \item \textbf{Misconception 3:} Quantum entanglement does not allow faster-than-light communication.
+\end{itemize}
+
+In quantum communication, we need network, repeaters, and protocols.
+\end{InfoBox}
+
+Next, we discuss quantum sensing:
+\begin{InfoBox}{Quantum Sensing}
+
+Using quantum systems to measure physical quantities with high precision and sensitivity.
+
+Distributed quantum sensing can enhance the system's overall sensitivity by utilizing entanglement.
+
+In quantum sensing, we need special materials, focus on doing well in economical, and also need networking.
+\end{InfoBox}
+
+Please remember:
+\begin{WarnBox}
+Please bear in mind that the uncertainty of quantum mechanics is fundamental, not due to lack of knowledge. This means that certain pairs of physical properties, like position and momentum, cannot be simultaneously known to arbitrary precision. This is a key principle that underpins the security of quantum communication protocols. Until you measure a quantum state, it exists in a superposition of all possible states. Measurement causes the state to collapse to one of the possible outcomes.
+\end{WarnBox}
+
+
+But we still have two quantum advantages:
+\begin{NoteBox}{Quantum Advantages}
+
+\textbf{Quantum Advantage 1:} We can finish certain known computational tasks faster, better, more precisely than classical methods (quantum computer).
+
+\textbf{Quantum Advantage 2:} We can do certain task that is impossible for classical methods.
+\end{NoteBox}
+
+
+\begin{CodeBox}{Python Example}
+def hello():
+    print("Hello, LaTeX book!")
+hello()
+\end{CodeBox}
+
+\begin{CodeBox}{C++ Example}
+include <iostream>
+int main(){
+    std::cout << "Hello!" << std::endl;
+    return 0;
+}
+\end{CodeBox}
+
+\chapter{Second Chapter}
+
+
+% =========================
+% Back Matter
+% =========================
+\backmatter
+\chapter*{Acknowledgments}
+
+
+\end{document}

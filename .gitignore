@@ -1,0 +1,79 @@
+####################################
+# LaTeX
+####################################
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.idx
+*.ilg
+*.ind
+*.xmpi
+*.xmpdata
+
+# LaTeX build directories
+_build/
+build/
+out/
+
+####################################
+# BibTeX / Biber
+####################################
+*.bib.bak
+
+####################################
+# Python / Jupyter
+####################################
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.env
+.venv
+venv/
+
+####################################
+# VS Code
+####################################
+.vscode/
+*.code-workspace
+
+####################################
+# OS files
+####################################
+.DS_Store
+Thumbs.db
+desktop.ini
+
+####################################
+# PDFs (optional)
+# comment this out if you WANT to track PDFs
+####################################
+# *.pdf
+
+####################################
+# Logs
+####################################
+*.log
+*.out
