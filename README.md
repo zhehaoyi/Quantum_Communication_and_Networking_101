@@ -8,23 +8,11 @@ The goal of this notebook is to systematically study the theoretical foundations
 
 This repository may include (but is not limited to):
 
-- 📘 LaTeX notes and book-style chapters
-- 🧮 Mathematical derivations and definitions
-- 🧪 Code examples and simulations (Python)
-- 🔗 Protocol-level discussions and diagrams
-- 🧠 Research insights and open problems
-
-Typical topics include:
-
-- Quantum communication fundamentals
-- Quantum channels and noise models
-- Quantum entanglement distribution
-- Quantum repeaters
-- Quantum teleportation and superdense coding
-- Quantum network architectures
-- Routing, resource allocation, and network control
-- Interfaces between quantum networking and classical networking
-- Connections to quantum information theory
+- LaTeX notes and book-style chapters
+- Mathematical derivations and definitions
+- Code examples and simulations (Python)
+- Protocol-level discussions and diagrams
+- Research insights and open problems
 
 ## Author
 Zhehao Yi  
