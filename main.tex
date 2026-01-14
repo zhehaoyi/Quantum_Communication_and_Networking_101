@@ -181,6 +181,52 @@ But we still have two quantum advantages:
 \end{NoteBox}
 
 
+\chapter{The physical principle behind quantum networks}
+What is your highest level understanding of quantum mechanics?
+
+Don't worry, nothing will be scary. We will just take a brief look at the physical principle behind quantum networks.
+
+\section{Quantum Information Science}
+Let's first look at Classical Information Science:
+\begin{NoteBox}{Classical Information Science}
+Two types of classical information:
+\begin{itemize}
+  \item \textbf{Semantic information}: Meaningful information, such as text, images, audio, and video.
+  \item \textbf{Technical information}: Is the set of symbols that are used.
+\end{itemize}
+\end{NoteBox}
+
+What is a bit?
+\begin{NoteBox}{Classical Bit}
+A single bit can be in one of two states (ordinary bit), typically like a switch that can be either "on" (1) or "off" (0). And we call the condition of being in one of these two states as \textit{"STATE"}.
+\end{NoteBox}
+
+What is a memory cell?
+\begin{NoteBox}{Memory Cell}
+A memory cell is a box that containing two classical bits. So it can be in one of four states: 00, 01, 10, or 11. These probabilities mean different states. So we can use multiple bits to represent more complex information. Like 3 bits can represent 8 states (000 to 111), and so on. But in given time, a memory cell can only be in one of these states.
+\end{NoteBox}
+
+What is a quantum bit (qubit)?
+\begin{NoteBox}{Quantum Bit (Qubit)}
+A qubit is the quantum analog of a classical bit. Unlike a classical bit that can be either 0 or 1, a qubit can exist in a superposition and entanglement of both states simultaneously. This means that a qubit can be represented as:
+\begin{equation} 
+\ket{\psi} = \alpha\ket{0} + \beta\ket{1}, \quad \text{where } |\alpha|^2 + |\beta|^2 = 1
+\end{equation}
+
+Please bear in mind that you only can know the state of a qubit after you measure it. Before measurement, it exists in a superposition of both states.
+\end{NoteBox}
+
+So, compare to classical bits, in a "quantum memory cell" containing two qubits, the system can exist in a superposition of all four possible states (00, 01, 10, 11) simultaneously. This means that the quantum memory cell can represent and process multiple states at once, thanks to the principles of superposition and entanglement.
+
+\section{Encoding and transmitting quantum information}
+
+\section{Bell state measurements}
+
+\section{The quantum internet}
+
+
+
+
 \begin{CodeBox}{Python Example}
 def hello():
     print("Hello, LaTeX book!")
