@@ -181,6 +181,8 @@ But we still have two quantum advantages:
 \end{NoteBox}
 
 
+
+% chapter two
 \chapter{The physical principle behind quantum networks}
 What is your highest level understanding of quantum mechanics?
 
@@ -218,6 +220,37 @@ Please bear in mind that you only can know the state of a qubit after you measur
 
 So, compare to classical bits, in a "quantum memory cell" containing two qubits, the system can exist in a superposition of all four possible states (00, 01, 10, 11) simultaneously. This means that the quantum memory cell can represent and process multiple states at once, thanks to the principles of superposition and entanglement.
 
+Here is a simple example about superposition and measurement:
+\begin{NoteBox}{Superposition and Measurement Example}
+Consider a qubit in the state:
+
+If we prepare a qubit in 0 degree of rotation, and it spins clockwise, so after we measure it, we will get a qubit spinning clockwise with 100\% probability.
+
+If we prepare a qubit in 90 degree of rotation, and it spins clockwise, so after we measure it, we will get a qubit spinning clockwise with 50\% probability, and counter-clockwise with 50\% probability.
+
+If we prepare a qubit in 30 degree of rotation, and it spins clockwise, so after we measure it, we will get a qubit spinning clockwise with 80\% probability, and counter-clockwise with 20\% probability.
+\end{NoteBox}
+
+So what dose superposition mean?
+\begin{NoteBox}{Superposition Meaning}
+Evidently, superposition means that before measurement, the qubit is in a combination of both states (clockwise and counter-clockwise). The probabilities of measuring each state depend on the coefficients in the superposition. This is a fundamental principle of quantum mechanics that allows qubits to represent more information than classical bits.
+
+And after measurement, the qubit collapses to one of the basis states (either clockwise or counter-clockwise) based on the probabilities determined by its superposition.
+
+Please bear in mind that after measurement, the original superposition state is lost, and the qubit is now in a definite state. Which means you do a measurement again, you will get the same result with 100\% probability. Repeating measurements on the same qubit will yield the same outcome.
+\end{NoteBox}
+
+Let's play with two qubits entangled:
+\begin{NoteBox}{Entangled Qubits Example}
+We have two qubits, A and B, in the entangled state, which means, we have two small quantum memeory cells, one contains A and B but in 0 state, the other contains A and B but in 1 state. So the total state is:
+\begin{equation}
+\ket{\psi} = \frac{1}{\sqrt{2}}(\ket{00} + \ket{11})
+\end{equation}
+If we measure qubit A and find it in state 0, qubit B will instantaneously collapse to state 0 as well. 
+Similarly, if we measure qubit A and find it in state 1, qubit B will collapse to state 1.
+\end{NoteBox}
+
+So you can't use this entanglement correlation to send information, it's only tell you the state of the other qubit after you measure one qubit.
 \section{Encoding and transmitting quantum information}
 
 \section{Bell state measurements}
