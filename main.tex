@@ -251,9 +251,86 @@ Similarly, if we measure qubit A and find it in state 1, qubit B will collapse t
 \end{NoteBox}
 
 So you can't use this entanglement correlation to send information, it's only tell you the state of the other qubit after you measure one qubit.
+
 \section{Encoding and transmitting quantum information}
+Let's first look at the classical communication systems:
+\begin{itemize}
+  \item \textbf{Source}: Produces the message to be transmitted.
+  \item \textbf{Transmitter}: Converts the message into a signal suitable for transmission.
+  \item \textbf{Channel}: The medium through which the signal is transmitted (e.g., air, fiber optic cable). You may have noise in the channel.
+  \item \textbf{Receiver}: Receives the transmitted signal and converts it back into a message.
+  \item \textbf{Destination}: The final recipient of the message.
+\end{itemize}
+
+So what is a quantum communication network?
+\begin{NoteBox}{Quantum Communication Network}
+  A network of channels and nodes that transmits or shares quantum information. And quantum information is encoded in quantum states, such as qubits.
+\end{NoteBox}
+
+How we encode quantum information?
+\begin{NoteBox}{Encoding Quantum Information}
+  There are two types of qubits we can use to encode quantum information:
+  \begin{itemize}
+    \item \textbf{Stationary Qubits}: These qubits are most useful for storing quantum information. (e.g., electron spins states, the states of superconductor current, etc.)
+    \item \textbf{Flying Qubits}: These qubits are most useful for transmitting quantum information over long distances. (e.g., photon polarization states, photon time-bin states, photo frequency, photo beam path, etc.)
+  \end{itemize}
+\end{NoteBox}
+
+Encoding in photon polarization states:
+\begin{NoteBox}{Photon Polarization Encoding}
+  In photon polarization encoding, we use the polarization states of photons to represent qubit states. The two orthogonal polarization states, horizontal (H) and vertical (V), can be used as the basis states for a qubit.
+  \begin{equation}
+    \ket{0} \equiv \ket{H}, \quad \ket{1} \equiv \ket{V}
+  \end{equation}
+
+  So $V + H = D$ (Diagonal), $V - H = A$ (Anti-diagonal), and any polar direction can lead to any other polarization state so is $xH + yA$.
+
+  But we need to pay attention that a simple phase change (e.g., from $H + V$ to $H - V$) can lead to a completely different state.
+\end{NoteBox}
+
+Here is a simple question for you:
+\begin{InfoBox}{Question}
+  Two photons are in the entangled state:
+  \begin{equation}
+    \ket{\psi} = \frac{1}{\sqrt{2}}(\ket{H_aV_b} + \ket{V_aH_b})
+  \end{equation}
+
+  If we measure photon a and find it in state $H$, what is the state of photon b after the measurement?
+
+  Yes, the answer is $V$.
+\end{InfoBox}
+
+Another way is to encode information in photon by location (path) or in time of arrival.
+
+How two transit a quantum state from one place to another?
+\begin{NoteBox}{Transmitting Quantum States}
+  First we need to know that there is no copy of an unknown quantum state. This is called the no-cloning theorem. So we can't use classical way to transmit quantum states.
+
+  A quantum communication network must transmit the state of the physical system that encodes the qubit from one place to another, although it may do so by state teleportation.
+
+  So we can use Joint Measurement tool, but the joint measurement can't tell us the state of each qubit before measurement. It only tell us the relation between the two qubits wheather they are the same or different.
+\end{NoteBox}
+
+Then we have entanglement swapping:
+\begin{NoteBox}{Entanglement Swapping}
+  First we have a "coin" $\alpha$ contains entangled state of A and B and a "coin" $\beta$ contains entangled state of C and D. The state equation of coin $\alpha$ and $\beta$ are
+  \begin{equation}
+    \begin{aligned}
+      \mathrm{State}_{\alpha} &= \frac{1}{\sqrt{2}}(\ket{0_a1_b} + \ket{1_a0_b}) \\
+      \mathrm{State}_{\beta} &= \frac{1}{\sqrt{2}}(\ket{0_c1_d} + \ket{1_c0_d})
+    \end{aligned}
+  \end{equation}
+
+  Then, we take the joint measurement of B and C to get the outcome, and according to the outcome to distinguish the A and B.
+
+  For example, if the outcome of joint measurement said B and C are the same, so there are two possibility either the B and C are the 0 or 1.
+
+  If B and C are both 1, we can know the A is 0 and D is 0; If B and C are both 0, then the A is 1 and D is 1.
+\end{NoteBox}
+
 
 \section{Bell state measurements}
+
 
 \section{The quantum internet}
 
