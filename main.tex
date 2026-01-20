@@ -329,7 +329,35 @@ Then we have entanglement swapping:
 \end{NoteBox}
 
 
-\section{Bell state measurements}
+\section{Quantum State Teleportation}
+Let's start with a simple example, Porf.Yi wants to send the quantum state of particle X to Porf.Zhang without sending the particle X itself. The state is $\mathrm{State_X} = x(0_x) + y(1_x)$. Because Prof.Yi cannot just measure the state and send the result to Prof.Zhang due to the no-cloning theorem, also, you only can get the limitation information from the measurement. So how can we do that? 
+
+The answer is quantum entanglement. We first need to prepare an entangled pairs of particles A and B, the entangled state is $\mathrm{State_{AB}} = \frac{1}{\sqrt{2}}(0_a1_b + 1_a0_b)$. Then we send particle B to Prof.Zhang and send the particle A to Porf.Wang, and we do a joint measurement for particles A and X. And now, Prof.Wang can tell Prof.Zhang the outcome of the join measurement through classical channel, and then Prof.Zhang can do a corresponding operation on particle B through some controlled transformation device to convert the state of particle B to the original state of particle X. Now, Porf.Yi has successfully transmitted the quantum state of particle X to Prof.Zhang without sending the particle X itself, this called quantum state teleportation.
+
+Quantum state teleportation can transfer the quantum state of a particle from one location to another without physically moving the particle itself, and nobady know the state of the particle during the process. But here we need to pay attention that we use a classical channel to send the joint measurement outcome, so the speed of quantum state teleportation cannot exceeed the speed of light.
+\begin{NoteBox}
+Quantum state teleportation is not instantaneous.
+\end{NoteBox}
+
+And the Particle X's original state is destroyed after the joint measurement, so there is no copy of the quantum state during the process, X no longer exist, he is sacrificed for the teleportation. And the state of particle X has been reproduce on particle B at Prof.Zhang's location.
+
+Also, the quantum state teleportation can be used for the half entangled state.
+
+After all, quantum state teleportation seems to be a synchronization problem. Because we both need classical channel and quantum entanglement channel to finish the teleportation. So, we come up with the idea of quantum memory.
+\begin{NoteBox}{Quantum Memory}
+  Quantum memory is a device that can absorbe a photon in a material medium in a way that its state is preserved.
+\end{NoteBox}
+
+
+\section{Bell State Measurements}
+A quantum state is not a property of the photon; it is a description of the photon.
+
+Born's rule:
+\begin{NoteBox}{Born's Rule}
+To find the probability for a photon to be observed passing throuigh a polarizer set for any given measurement scheme, project the photon;s polarization arrow onto the polarizer axis, then square the length of the projection.
+
+So we will get the probability of the photon passing through the polarizer $a^2$. Then the complementary probability of the photon being absorbed by the polarizer is $b^2 = 1 - a^2$.
+\end{NoteBox}
 
 
 \section{The quantum internet}
